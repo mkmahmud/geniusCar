@@ -1,14 +1,22 @@
 import React from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.svg'
+import { AuthContext } from '../../Context/AuthContext/AuthProvider';
 
 const Navbar = () => {
+
+    const {user} = useContext(AuthContext)
+   
 
     const menus = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/'>About</Link></li>
         <li><Link to='/'>Services</Link></li>
         <li><Link to='/'>Blog</Link></li>
+        {
+            user?.email ? <li><Link to='/orders'>Orders</Link></li> : ''
+        }
         <li><Link to='/'>Contact</Link></li>
         <li><Link to='/login'>Log In</Link></li>
         <li><Link to='/signup'>Sign Up</Link></li>
