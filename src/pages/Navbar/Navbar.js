@@ -10,6 +10,7 @@ const Navbar = () => {
         <li><Link to='/'>Services</Link></li>
         <li><Link to='/'>Blog</Link></li>
         <li><Link to='/'>Contact</Link></li>
+        <li><Link to='/login'>Log In</Link></li>
     </>
     return (
         <div className="navbar h-20 ">
@@ -22,7 +23,7 @@ const Navbar = () => {
                         {menus}
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl"><img src={logo} alt="" /></a>
+                <img src={logo} alt="" />
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">

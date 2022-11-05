@@ -4,7 +4,7 @@ import person from '../../../assets/images/about_us/person.jpg'
 
 const About = () => {
     return (
-        <div className="hero min-h-screen ">
+        <div className="hero my-20 ">
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="text-center lg:text-left w-1/2">
                     <p className='text-[#FF3811] text-[20px]'>About us</p>
