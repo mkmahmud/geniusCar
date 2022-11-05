@@ -6,20 +6,32 @@ import { AuthContext } from '../../Context/AuthContext/AuthProvider';
 
 const Navbar = () => {
 
-    const {user} = useContext(AuthContext)
+    const {user, logOut} = useContext(AuthContext)
    
+
+    const signOut = () => {
+        logOut()
+    }
 
     const menus = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/'>About</Link></li>
         <li><Link to='/'>Services</Link></li>
         <li><Link to='/'>Blog</Link></li>
-        {
-            user?.email ? <li><Link to='/orders'>Orders</Link></li> : ''
-        }
         <li><Link to='/'>Contact</Link></li>
-        <li><Link to='/login'>Log In</Link></li>
+        {
+            user?.email 
+            ?
+             <>
+             <li><Link to='/orders'>Orders</Link></li>
+             <li><Link onClick={signOut}>log Out</Link></li>
+             </> 
+             : <>
+             <li><Link to='/login' >Log In</Link></li>
         <li><Link to='/signup'>Sign Up</Link></li>
+             </>
+        }
+        
     </>
     return (
         <div className="navbar h-20 ">

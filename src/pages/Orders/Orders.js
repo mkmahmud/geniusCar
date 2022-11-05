@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useContext } from 'react';
+import { Navigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthContext/AuthProvider';
 import SingelOrders from './SingelOrders/SingelOrders';
 
@@ -11,6 +12,10 @@ const Orders = () => {
     const { user } = useContext(AuthContext)
 
     const [orders, setOrders] = useState([]);
+
+    if(!user?.email){
+        <Navigate to='/home'></Navigate>
+    }
 
     useEffect(() => {
         fetch(`http://localhost:5000/orders/?email=${user?.email}`)
