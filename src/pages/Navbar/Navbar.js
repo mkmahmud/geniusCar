@@ -11,6 +11,7 @@ const Navbar = () => {
         <li><Link to='/'>Blog</Link></li>
         <li><Link to='/'>Contact</Link></li>
         <li><Link to='/login'>Log In</Link></li>
+        <li><Link to='/signup'>Sign Up</Link></li>
     </>
     return (
         <div className="navbar h-20 ">
